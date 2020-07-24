@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        function OkayButton (props) {
+            return (
+                <button className={ props.cssClasses }>Okay</button>
+            )
+        }
+
+        class Counter extends ReactDOM.Component {
+            render () {
+                return (
+                    <button className={ this.props.cssClasses }>Okay</button>
+                )
+            }
+        }
+
+        const element = (
+            <div>
+                <OkayButton cssClasses="red pinl-border"/>
+                <Counter>
+            </div>
+        )
+        ReactDOM.render(
+            element,
+            document.querySelector("#root")
+        )
+    </script>
+</body>
+</html>
